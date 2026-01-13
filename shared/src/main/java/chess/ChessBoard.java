@@ -7,7 +7,10 @@ package chess;
  * signature of the existing methods.
  */
 public class ChessBoard {
-
+    /* This creates a 2D array (an array of arrays) (called squares) of ChessPiece objects that is 8 by 8 memory addresses.
+     This means there are 64 individual memory addresses which represent the squares on the chess board.
+     */
+    ChessPiece[][] squares = new ChessPiece[8][8];
     public ChessBoard() {
         
     }
@@ -19,7 +22,7 @@ public class ChessBoard {
      * @param piece    the piece to add
      */
     public void addPiece(ChessPosition position, ChessPiece piece) {
-        throw new RuntimeException("Not implemented");
+        squares[position.getRow()][position.getColumn()] = piece;
     }
 
     /**
