@@ -10,7 +10,7 @@ import java.util.List;
  * signature of the existing methods.
  */
 public class ChessPiece {
-
+/* I added in a few fields that allowed me to
     private final ChessGame.TeamColor pieceColor;
     private final PieceType type;
 
@@ -61,6 +61,17 @@ public class ChessPiece {
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         ChessPiece piece = board.getPiece(myPosition);
         if (piece.getPieceType() == PieceType.BISHOP) {
+            /*this is where I think I would need to write logic that checks one direction of travel, like forward and
+            left for example. As it checks, it makes sure the next square is not out of board boundaries ( no bigger
+            than row 8 or smaller than column 1) and also if there is an opponents piece or a piece of their own in that
+            square. Obviously, if the move goes outside the bounds of the board or lands on a piece of your own, the move
+            is not valid. It is valid if the move lands on an opponents piece.
+
+            So I could say for forward left movement something like:
+            while the move is valid:
+            if (col - 1) >= 1 && (row + 1) <= 8 (then the move is valid)
+                else move = not valid
+             */
             return List.of(new ChessMove(new ChessPosition(5, 4), new ChessPosition(1, 8), null));
         }
         return List.of();
