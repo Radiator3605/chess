@@ -44,4 +44,11 @@ public class ChessMove {
     public ChessPiece.PieceType getPromotionPiece() {
         return promotionPiece;
     }
+    /* this overrides the default output of the toString() method to display the start and end positions, not the memory
+     addresses.
+     */
+    @Override
+    public String toString() {
+        return String.format("%s%s", startPosition, endPosition);
+    }
 }

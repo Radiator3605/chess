@@ -39,4 +39,11 @@ public class ChessPosition {
     public int getColumn() {
         return col;
     }
+    /* this overrides the default output of memory addresses in the toString() method and instead, using a formated
+    string, returns a much easier to read row and column digit.
+     */
+    @Override
+    public String toString() {
+        return String.format("[%d,%d]", row, col);
+    }
 }
