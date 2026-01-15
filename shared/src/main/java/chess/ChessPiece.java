@@ -72,6 +72,11 @@ public class ChessPiece {
             if (col - 1) >= 1 && (row + 1) <= 8 (then the move is valid)
                 else move = not valid
              */
+
+            /* for the PAWN all you need to do for the promotion portion is have it check if it is on the very top or
+            bottom of the board, then if it is, it must promote because there is no way for a pawn to move to the back
+            of their same side. 
+             */
             return List.of(new ChessMove(new ChessPosition(5, 4), new ChessPosition(1, 8), null));
         }
         return List.of();
