@@ -10,7 +10,7 @@ import java.util.List;
  * signature of the existing methods.
  */
 public class ChessPiece {
-/* I added in a few fields that allowed me to
+// I added in a few fields that allowed me to add pieceColor and type fields to this class
     private final ChessGame.TeamColor pieceColor;
     private final PieceType type;
 
@@ -75,9 +75,16 @@ public class ChessPiece {
 
             /* for the PAWN all you need to do for the promotion portion is have it check if it is on the very top or
             bottom of the board, then if it is, it must promote because there is no way for a pawn to move to the back
-            of their same side. 
+            of their same side.
              */
-            return List.of(new ChessMove(new ChessPosition(5, 4), new ChessPosition(1, 8), null));
+            /* now I am thinking I need to do the following:
+
+            call get start position
+            call get final position
+            then run the logic on the final position coordinates to see if it went off the board?
+             */
+            //adding myPosition.getRow() and .getColumn worked great to get the starting position printing for this!!
+            return List.of(new ChessMove(new ChessPosition(myPosition.getRow(), myPosition.getColumn()), new ChessPosition(myPosition.getRow(), myPosition.getColumn()), null));
         }
         return List.of();
     }
